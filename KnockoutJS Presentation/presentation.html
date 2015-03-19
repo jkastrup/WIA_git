@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+        
+        
+        <!-- add fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Cousine:400,700|VT323|Droid+Serif:700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/example.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+            	<section>
+                	<h1>Knockout JS</h1>
+                    <p><em>The Basics</em></p>
+                </section><!-- end Slide 0 -->
+            
+            	<section>
+                	<section>
+                        <h2>Need to make a list?</h2>
+                    
+                        <p>Check out this <a target="_blank" href="example.html">example</a> of a grocery list!</p>
+                        <p>The example uses KnockoutJS 3.2.0</p>
+    
+                	</section><!-- end Slide 1/1 -->
+                    
+                    <section>
+                    	<h2>What's Going on?</h2>
+                        <ul>
+                        	<li>Three buttons <span class="fragment highlight-blue">add</span>, <span class="fragment highlight-blue">remove</span>, and <span class="fragment highlight-blue">sort</span> the list</li>
+                            <li>User input is bound to the list</li>
+                            <li>This data-binding makes updating the GUI fast and easy</li>
+                        </ul>
+                    </section><!-- end Slide 1/2 -->
+                    
+                </section><!-- end Slide 1 -->
+                
+                <section>
+                	<section>
+                        <h2>The Basics</h2>
+                        <p>What is Knockout JS?</p>
+                        <ul class="aboutKJS">
+                            <li class="fragment">A stand alone JavaScript Library</li>
+                            <li class="fragment">Creates rich and responsive displays</li>
+                            <li class="fragment">Easy framework to control dynamically updated UI elements</li>
+                        </ul>
+                    </section><!-- end Slide 2/1 -->        
+                    
+                    <section>
+                    	<h2>Simply Put...</h2>
+                        <p>User input/interaction changes data</p>
+                        <p>Data can then be manipulated, updating the UI automaticaly</p>
+                    </section><!-- end Slide 2/2 -->    	
+                </section><!-- end Slide 2 -->
+                
+                <section>
+                    <section>
+                        <h2>Model-View-View Model</h2>
+                        <p>Three parts to the whole</p>
+                        <ul>
+                            <li><span class="fragment highlight-blue">Model: </span> the application's stored data (i.e. server-side data).</li>
+                            <li><span class="fragment highlight-blue">View Model: </span> a pure-code representation of the data and operations on a UI (i.e. Javascript).</li>
+                            <li><span class="fragment highlight-blue">View: </span> a visible, interactive UI representing the state of the view model (i.e. HTML5 display).</li>
+                        </ul>
+                    </section><!-- end Slide 3/1 -->
+                    
+                    <section>
+                    	<p>More information about the MVVM design pattern, check out the <a href="http://knockoutjs.com/documentation/observables.html" target="_blank">KnockoutJS page</a></p>
+                    </section><!-- end Slide 3/2 -->
+                </section><!-- end Slide 3 -->
+                
+                <section>
+                	<section>
+                    	<h2>View Model</h2>
+                        <p>The View Model is pure code, representating data and the operations involved in the application.</p>
+                        <p>Below is a simple example of a view-model</p>
+                        
+                        <pre><code>
+var myViewModel = {
+    personName: 'Bob',
+    personAge: 123
+};
+                        </code></pre><br>
+                        <p>A View Model can be made by declaring any JavaScript object!</p>
+                        
+                    </section><!-- end Slide 4/1 -->
+                    
+                    <section>
+                    	<h2>View</h2>
+                        <p>The View is the visual representation of the data.  This is normally constructed through HTML</p>
+                        
+                        <pre><code>
+The name is &lt;span data-bind="text: personName"&gt;&lt;/span&gt;
+                        </code></pre><br>
+                        <p>This will update the name of the person in the UI every time the View Model (JavaScript) changes.</p>
+                    </section><!-- end Slide 4/2 -->
+                    
+                    <section>
+                    	<h2>Activate Knockout</h2>
+                        <p>In order for Knockout to work, we must activate it using a simple line of code:</p>
+                        <pre><code>
+ko.applyBindings(myViewModel);
+                        </code></pre><br>
+                        <p>This will allow us to use the "data-bind=" feature in our tags</p>
+                    </section><!-- end Slide 4/3 -->
+                </section><!-- end Slide 4 -->
+                
+                <section>
+                    <h2>Core Features</h2>
+                    <ol>
+                        <li>Observables and dependency tracking</li>
+                        <li>Declarative bindings</li>
+                        <li>Templating</li>
+                    </ol>
+                    <p class="fragment"><em><small>We'll worry mostly about the Observables for this example.</small></em></p>
+                </section><!-- end Slide 5 -->
+                
+                <section>
+                	<section>
+                    	<h2>Observables</h2>
+                        <p>Observable variables are what allow Knockout to update the View and View Model on the fly</p>
+                        <p>It's easy! Here is the previous View Model written with observables</p>
+                        <pre><code>
+var myViewModel = {
+    personName: ko.observable('Bob'),
+    personAge: ko.observable(123)
+};
+                        </code></pre><br>
+                        <p><em>This means that whenever the View</em> OR <em> the View Model changes, the other will update</em></p>
+                    </section><!-- end Slide 6/1 -->
+                    
+                    <section>
+                    	<h2>Interacting with Observables</h2>
+                        <h3><em>Reading</em></h3>
+                        <p>Retrieving an observable variable is as easy as calling the property as a function with no parameters:</p>
+                        <pre><code>
+myViewModel.personName()
+                        </code></pre><br>
+                        <p>This will return 'Bob'</p>
+                    </section><!-- end Slide 6/2 -->
+                    
+                    <section>
+                    	<h2>Interacting with Observables</h2>
+                        <h3><em>Writing</em></h3>
+                        <p>Writing to an observables is just as easy! Simply use the new data as the paremeter:</p>
+                        <pre><code>
+myViewModel.personName('Mary')
+                        </code></pre><br>
+                        <p>This will update the View Model, which will in turn update the View to show 'Mary'</p>
+                    </section><!-- end Slide 6/3 -->
+                    
+                </section><!-- end Slide 6 -->
+                
+                <section>
+                	<section>
+                        <h2>Bringing it Together</h2>
+                        <p>This Grocery List example is simple, but shows how powerful Knockout can be</p>
+                        <p><small>Below is the entire HTML5 code for this list editor</small></p>
+                        
+                        <pre><code>
+&lt;div class="container"&gt;
+&lt;h1&gt;Grocery List&lt;/h1&gt;
+    <!-- User input -->
+    &lt;form data-bind="submit:addItem"&gt;
+        &lt;p&gt;What do you need to remember?&lt;/p&gt;
+        &lt;input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' /&gt;
+        
+        &lt;button  class='button' type="submit" data-bind="enable:itemToAdd().length > 0">Add&lt;/button&gt;
+        &lt;button class='button' data-bind="click: sortItems, enable: allItems().length > 1">Sort&lt;/button&gt;
+    &lt;/form&gt;
+    
+    <!-- Visual representaiton of user data -->
+    &lt;div class="myList"&gt;
+        &lt;p&gt;Don't Forget to Buy:&lt;/p&gt;           
+                    
+        &lt;select id="list" multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"&gt;
+        &lt;/select&gt;
+        
+        &lt;button id='del' data-bind="click: deleteSelected, enable: selectedItems().length > 0">Delete&lt;/button&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;<!-- end .container -->
+                    	</code></pre>
+                    </section><!-- end Slide 7/1 -->
+                    
+                    <section>
+                    	<p>Each interactive element is defined by its "data-bind"</p>
+                        <pre><code>
+&lt;input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' /&gt;
+                        </code></pre>
+                        <p>The above line binds the 'itemToAdd' observable as text, in an &lt;input&gt; tag</p>
+                        <p>Any time the 'itemToAdd' (the user input) is updated, the View or View Model will update respectively</p>
+                    </section><!-- end Slide 7/2 -->
+                    
+                    <section>
+                    	<p>The 'data-bind' can also be used to check conditions</p>
+                        <pre><code>
+&lt;button  class='button' type="submit" data-bind="enable:itemToAdd().length > 0"&gt;Add&lt;/button&gt;
+                        </code></pre>
+                        <p>This button will only be enabled when the observable 'itemToAdd' has a length greater than 0 (i.e. something is actually there to add).<p>
+                    </section><!-- end Slide 7/3 -->
+                    
+                    <section>
+                    	<p>A key aspect of 'data-bind' is the 'click' parameter.</p>
+                        <pre><code>
+&lt;button class='button' data-bind="click: sortItems, enable: allItems().length > 1"&gt;Sort&lt;/button&gt;
+                        </code></pre>
+                        <p>Simple button actions can be achieved, binding the UI to the View Model</p>
+                        <p>Above, <span class="fragment highlight-blue">data-bind="click: sortItems"</span> runs the sortItems function when clicked</p>
+                    </section><!-- end Slide 7/4 -->
+                 
+                </section><!-- end Slide 7 -->
+                
+                <section>
+                	<section>
+                        <h3>Understanding the JS</h3>
+                        <p>The Grocery List is made of two main pieces</p>
+                        <ol>
+                            <li>View Model Properties</li>
+                            <li>Observables</li>
+                        </ol>
+                	</section><!-- end Slide 8/1 -->
+                    
+                    <section>
+                    	<h3>Understanding the JS</h3>
+                        <p>View Model Properties are not observable, meaning they don't need updated or changed.  The 'Add' button is a fine example of this.</p> 
+                        <p>First, we set up our View Model</p>
+                        <pre><code>
+var GroceryList = function(){
+                        </code></pre>
+                    </section><!-- end Slide 8/2 -->
+                    
+                    <section>
+                    	<h3>Understanding the JS</h3>
+                        <p>Again, <span class="fragment highlight-blue">ko.observable</span> allows Knockout to update the MVVM</p>
+                        <p>Now we can fill in our View Model properties:</p>
+                        <pre><code>
+// Observable variables 
+this.itemToAdd = ko.observable("");
+this.allItems = ko.observableArray([]);
+this.selectedItems = ko.observableArray([]);
+                        </code></pre>
+                        <p><small>A single variable for the item to add, and two arrays to hold all the items in the list and to hold all selected items</small></p>
+                        
+                    </section><!-- End Slide 8/3 -->
+                </section><!-- end Slide 8 -->
+                
+                <section>
+                	<section>
+                        <h3>Functions are Properties too!</h3>
+                        <p>Your View Model can have any properties you want it to have, especially functions.</p>
+                        <p>The 4 main functions for our grocery list model are:</p>
+                        <ul>
+                            <li class="fragment"><strong>addItem:</strong> &nbsp;adds an item to the list</li>
+                            <li class="fragment"><strong>deleteSelected:</strong> &nbsp;deletes the selected item(s)</li>
+                            <li class="fragment"><strong>sortItems:</strong> &nbsp;sorts the items in the list alphabetically</li>
+                            <li class="fragment"><strong>sizeList:</strong> &nbsp;Resizes the list to match the number of items</li>
+                        </ul>
+                	</section><!-- end Slide 9/1 -->
+                    
+                    <section>
+                    	<p>This is the 'addItem' function.
+                        
+                        <pre><code>
+this.addItem = function () {
+    if ((this.itemToAdd() != "") && (this.allItems.indexOf(this.itemToAdd()) < 0 )) {	// IndexOf < 0 stops duplicates and blank entries
+        this.allItems.push(this.itemToAdd());
+        this.itemToAdd("");	// Clear input field
+        this.sizeList();
+    }
+}; // end addItem()
+                        </code></pre>
+                        <p>Item isn't on the list? AND there is something to add</p>
+                        <p>Then add the item, clear the input, and resize the list</p>
+                        <p><small>Notice there is no trace of UI elements in the View-Model!</small></p>
+                    </section><!-- end Slide 9/2 -->
+                    
+                    <section>
+                    	<p>This is the 'deleteSelected' function</p>
+                        <pre><code>
+this.deleteSelected = function() {
+    this.allItems.removeAll(this.selectedItems());
+    this.selectedItems([]);	// clear selected items
+    this.sizeList();
+
+};	// end removeSelected()
+                        </code></pre>
+                        <p>Remove all of the selected items, from the item list</p>
+                        <p>Clear 'selectedItems' and resize the list</p>
+                        <p><small>Still no UI elements...</small></p>
+                    </section><!-- end Slide 9/3 -->
+                    
+                    <section>
+                    	<p>And the 'sortItems' and 'sizeList' functions</p>
+                        <pre><code>
+this.sortItems = function() {
+    this.allItems.sort();
+};
+
+this.sizeList = function () {
+    document.getElementById("list").size = document.getElementById('list').options.length;
+}; // end sizeList()
+                        </code></pre>
+                        <p>All of the JavaScript (View Model) has no direct interaction with the UI elements.  All of that is taken care of by Knockout through 'data-bind'!</p>
+                    </section><!-- end Slide 9/4 -->
+                    
+                </section><!-- end Slide 9 -->
+                
+                <section>
+                	<h2>Wrap Up!</h2>
+                    <ul style="font-size:.9em">
+                        <li class="fragment">Knockout uses the Model-View-View Model design pattern</li>
+                        <li class="fragment">This allows easy control over dynamic elements and data</li>
+                        <li class="fragment">Each part is separate, but are linked through data-binding</li>
+                    </ul>
+                </section><!-- end Slide 10 -->
+                
+                <section>
+                	<h3>Want to learn more?</h3>
+                    <h6>Jump to <a href="http://www.knockoutjs.com" target="_blank">Knockout JS</a></h6>
+                    <br>
+                    <h3>Want the source files to try on your own?</h3>
+                    <h6>Go to my GitHub <a href="https://github.com/jkastrup/WIA/tree/master/week3" target="_blank">here</a></h6>
+                </section><!-- end Slide 11 -->
+
+			</div><!-- end Slides -->
+
+		</div><!-- end reveal -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+        <script src="js/knockout-3.2.0.js"></script>
+        <script src="js/main.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

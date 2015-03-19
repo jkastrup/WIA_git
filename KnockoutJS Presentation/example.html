@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>KnockoutJS List Editor</title>
+    
+    <!-- Load KnockoutJS and JQuery -->
+    <script src="js/knockout-3.3.0.js"></script>
+    
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/example.css" />
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+    
+    <!-- example container -->
+    <div class="container">
+    	<h1>Grocery List</h1>
+        <!-- User input -->
+        <form data-bind="submit:addItem"> 
+        	<p>What do you need to remember?</p> 
+        	<input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
+            
+            <button  class='button' type="submit" data-bind="enable:itemToAdd().length > 0">Add</button>
+            <button class='button' data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+        </form>
+    	
+        <!-- Visual representaiton of user data -->
+        <div class="myList">
+            <p>Don't Forget to Buy:</p>            
+                    	
+            <select id="list" multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems">
+            </select>
+            
+            <button id='del' data-bind="click: deleteSelected, enable: selectedItems().length > 0">Delete</button>
+        </div>
+        
+    </div><!-- end .container -->
+    
+    
+    <!-- Load main javascript document -->
+    <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* 
+CSS:		'main.css'
+Author:		Jason Kastrup
+Class:		WIA 03-14
+Assignment:	Knockout Example
+
+*/
+
+/* Color Scheme
+	borders:	#309
+	background: #9FF [ rgb(153,255,255) ]
+*/
+/* Fonts
+	sizes:  18px, 22px,
+*/
+
+/* General Styles */
+.container {
+	max-width: 50%;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding: 20px;
+	
+	background: #FF9;
+	
+	border: 2px solid #309;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	font-family: 'Architects Daughter', cursive;
+	
+	-webkit-box-shadow: -10px 10px 5px 0px rgba(51,0,153,0.35);
+	-moz-box-shadow: -10px 10px 5px 0px rgba(51,0,153,0.35);
+	box-shadow: -10px 10px 5px 0px rgba(51,0,153,0.35);
+}
+.container h1 {
+	text-align: center;	
+	text-shadow: -4px 4px 2px rgba(51, 0, 153, 0.35);
+}
+.container button {
+	cursor: pointer;
+	font-size: 12px;
+	color: #fff;
+	pointer: cursor;
+	background: rgb(163,122,204);
+	background: -moz-linear-gradient(top,  rgba(163,122,204,1) 0%, rgba(125,46,204,1) 44%, rgba(102,0,204,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(163,122,204,1)), color-stop(44%,rgba(125,46,204,1)), color-stop(100%,rgba(102,0,204,1)));
+	background: -webkit-linear-gradient(top,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	background: -o-linear-gradient(top,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	background: linear-gradient(to bottom,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a37acc', endColorstr='#6600cc',GradientType=0 );
+	
+	border: 1px solid #309;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;	
+}
+
+/* Input Form */
+.container form {
+	margin-bottom: 20px;	
+}
+.container form p {
+	font-size: 22px;
+	margin-bottom: 0;	
+}
+.container form button {
+	font-size: 18px;
+	color: #fff;
+	pointer: cursor;
+	background: rgb(163,122,204);
+	background: -moz-linear-gradient(top,  rgba(163,122,204,1) 0%, rgba(125,46,204,1) 44%, rgba(102,0,204,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(163,122,204,1)), color-stop(44%,rgba(125,46,204,1)), color-stop(100%,rgba(102,0,204,1)));
+	background: -webkit-linear-gradient(top,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	background: -o-linear-gradient(top,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	background: linear-gradient(to bottom,  rgba(163,122,204,1) 0%,rgba(125,46,204,1) 44%,rgba(102,0,204,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a37acc', endColorstr='#6600cc',GradientType=0 );
+	
+	border: 1px solid #309;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	
+}
+.container form input[type="text"] {
+	width: 50%;	
+	font-size: 18px;
+	font-family: 'Architects Daughter', cursive;
+}
+
+/* The Grocery List */
+.container .myList {
+	padding: 0px 10px;
+}
+.container .myList p {
+	font-size: 22px;
+	margin-bottom: 0;
+	text-decoration: underline;
+}
+.container .myList button {
+	margin-top: 5px;	
+}
+.container select {
+	margin-top: 2px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	width: 100%;
+	border: none;
+	height: auto;
+	background: #FF9;
+	font-family: 'Architects Daughter', cursive;
+	font-size: 18px;
+}
